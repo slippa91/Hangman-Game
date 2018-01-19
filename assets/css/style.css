@@ -33,11 +33,76 @@
 .background {
     width: 100%;
     margin: 0 auto;
-    height: 500px;
+    height: 550px;
     background-image: url("../images/bright_squares.png");
     background-size: 100% auto;
 }
 
+.begin{
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:#2D2A2A;
+    background-color: salmon;
+}
+
+/* Boxes for Lives and Wins */
+
+.smallbox {
+    height: 150px;
+    background-color: yellowgreen;
+    border: solid 2px #666;
+    margin-top: 15px;
+}
+
+.smallboxtext {
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 25px;
+    color: #2D2A2A;
+    text-align: center;
+
+}
+
+.smallboxnumbers {
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 25px;
+    color: #2D2A2A;
+    text-align: center;
+    border: 1px solid #666;
+}
+ /* Hangman Image */
+
+#image {
+    height: 340px;
+    width:340px;
+    padding: 5px;
+    background-color: yellow;
+    margin-top: 15px; 
+    margin-bottom: 15px;
+}
+
+
+/* Letter Boxes */
+
+.letterrow {
+
+}
+
+.letterbox {
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    height: 75px;
+    width: 75px;
+    margin-right: 3px;
+    color: #2D2A2A;
+    background-color: salmon;
+    border: 2px solid #666;
+
+}
 
  /* Footer*/
 
@@ -47,8 +112,8 @@
     height: 70px;
     background-color: #666;
     bottom: 0;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+    border-top: 5px solid #102dd6;
+    border-bottom: 5px solid #102dd6;
 }
 
 .crtext {
