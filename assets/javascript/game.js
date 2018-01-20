@@ -10,10 +10,8 @@ var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", 
 // Start Function
 
 var startGame = function(event) {
-        var randomNum = (Math.floor((Math.random() *10) +1) - 1);
-            console.log(randomNum);
 
-        var chosenWordArray = wordArray[randomNum];
+        var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
             console.log(chosenWordArray);
 
         var letterArray = chosenWordArray.split("");
@@ -31,33 +29,28 @@ var startGame = function(event) {
         console.log(letterFive);
 
         var startDirections = document.querySelector("#inxsText").innerText = "Choose a letter using the keyboard.";
+        var startHangmanPic = document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
 }
 
 document.addEventListener("keydown", startGame);
+
+// Picking Letter
+
+var chosenLetter;
+
+var pickingLetter = function(event) {
+        chosenLetter= event.key;
+}
+
+document.addEventListener("keydown", pickingLetter);
+
+
+
 
 
 
 //Changing Hangman
 
-var guessNum;
-
-/*
-switch(guessNum) {
-        case (guessNum === 7):
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
-        break;
-        case (guessNum === 6):
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_1.jpeg";
-        break;
-        case (guessNum === 5):
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_2.jpeg";
-        break;
-        default:
-        alert("Broken Picture");
-}
-*/
-
-var guessNum;
 
 var changingHangman = function(guessNum) {
 
