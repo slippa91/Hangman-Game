@@ -8,7 +8,6 @@
     border-bottom: solid 5px #666;
 }
 
-
  /* Name element */
 
  .banner {
@@ -26,9 +25,9 @@
     
  }
 
- /* Styling for Main Game Box Context */
+ /* Main Game Box Context */
 
-/* styling for Main Game Background*/
+/* Main Game Background*/
 
 .background {
     width: 100%;
@@ -63,7 +62,6 @@
     font-size: 25px;
     color: #2D2A2A;
     text-align: center;
-
 }
 
 .smallboxnumbers {
@@ -73,11 +71,12 @@
     text-align: center;
     border: 1px solid #666;
 }
+
  /* Hangman Image */
 
 .image {
-    height: 100px;
-    width: 150px;
+    height: 400px;
+    width: 300px;
     padding: 5px;
     background-color: yellow;
     margin-top: 5px; 
@@ -88,9 +87,6 @@
 
 /* Letter Boxes */
 
-.letterrow {
-
-}
 
 .letterbox {
     font-family: 'Signika Negative', sans-serif;
