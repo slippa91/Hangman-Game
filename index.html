@@ -18,28 +18,28 @@
     
     <body>
 
-            <div class="container">
+        <div class="container">
 
                 <!-- Header Content-->
 
                     <div class="row head">
     
                         <div class="col-xs-12 banner">
-                            <p class="name">Hangman</p>
+                            <p class="name">Hangman Double-ZZ's</p>
                         </div>
     
                     </div>
 
                 <!--Main Body Content -->
 
-                <div class="row background">
+            <div class="row background">
 
                     <!-- Top Row Explination -->
 
                     <div class=row>
 
                         <div class="col-md-6 col-md-offset-3 begin">
-                            <p>Press any key to begin playing.</p>
+                            <p id="inxsText">Press any key to begin playing.</p>
                         </div>
 
                     </div>
@@ -50,26 +50,29 @@
 
                         <!-- Remaining Lives Box -->
 
-                        <div class="col-md-2 col-md-offset-1 smallbox lives">
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <p class="smallboxtext">Remaining Lives</p>
-                                </div>
-                                <div class="col-md-4 col-md-offset-4">
-                                    <p class="smallboxnumbers">0</p>
+                            <div class="col-md-2 col-md-offset-1 smallbox guess">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                    <p class="smallboxtext">Remaining Guesses</p>
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-4">
+                                    <p class="smallboxnumbers">7</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                         <!-- Hangman Picture Box -->
 
-                        <div class="col-md-4 col-md-offset-1">
-                                <img class="img-thumbnail img-responsive" id="image" src="assets/images/Hangman_Main.jpeg" alt="Hangman Picture" />
-                        </div>
+                            <div class="col-md-4 col-md-offset-1">
 
+                                <img class="img-thumbnail img-responsive image" id="image1" src="assets/images/Hangman_0.jpeg" alt="Hangman Picture" />
+                                    
+                            </div>
+
+                
                         <!-- Number of Wins Box -->
 
-                            <div class="col-md-2 col-md-offset-1 smallbox lives">
+                            <div class="col-md-2 col-md-offset-1 smallbox wins">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1">
                                         <p class="smallboxtext">Number of Wins</p>
@@ -79,28 +82,28 @@
                                     </div>
                                 </div>
                             </div>
-
-                    </div>
-
-
+                
+                 
 
                     <!-- Word Row with Letter Boxes -->
 
                     <div class="row letterrow">
 
-                        <div class="col-md-1 col-md-offset-4 letterbox">A</div>
-                        <div class="col-md-1 letterbox">B</div>
-                        <div class="col-md-1 letterbox">C</div>
-                        <div class="col-md-1 letterbox">D</div>
-                        <div class="col-md-1 letterbox">E</div>
+                        <div class="col-md-1 col-md-offset-4 letterbox" id="letter1">A</div>
+                        <div class="col-md-1 letterbox" id="letter2">B</div>
+                        <div class="col-md-1 letterbox" id="letter3">C</div>
+                        <div class="col-md-1 letterbox" id="letter4">D</div>
+                        <div class="col-md-1 letterbox" id="letter5">E</div>
 
                     </div>
+                <!-- Main Box -->
+                </div>
 
                     <!-- End Game -->
 
 
-
-                </div>
+            <!-- Background -->
+            </div>
 
                 <!-- Footer Content -->
 
@@ -113,12 +116,14 @@
                                 </div>
                 
                         </div> 
-                
-                </div>
+            
+                    </div>
                     
-                            
-            </div>
-                
+        <!-- Container-->
+        </div>
+     
+        <script src="assets/javascript/game.js"></script>     
+
     </body>
                     
 </html>
