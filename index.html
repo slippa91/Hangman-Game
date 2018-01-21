@@ -11,6 +11,14 @@
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Signika+Negative" rel="stylesheet">
 
+       <!-- jQuery Document Ready -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       
+       <!--<script> $(document).ready(function() {
+           alert("Document Loaded");
+       }); 
+       </script> -->
+
         <!-- CSS Sheet Link -->
         <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
     
@@ -38,7 +46,7 @@
 
                     <div class=row>
 
-                        <div class="col-md-6 col-md-offset-3 begin">
+                        <div class="col-md-6 col-md-offset-3 begin" id="inxsBox">
                             <p id="inxsText">Press any key to begin playing.</p>
                         </div>
 
@@ -56,7 +64,7 @@
                                     <p class="smallboxtext">Remaining Guesses</p>
                                     </div>
                                     <div class="col-md-4 col-md-offset-4">
-                                    <p class="smallboxnumbers">7</p>
+                                    <p class="smallboxnumbers" id="guessNumber">7</p>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +73,7 @@
 
                             <div class="col-md-4 col-md-offset-1">
 
-                                <img class="img-thumbnail img-responsive image" id="image1" src="assets/images/Hangman_0.jpeg" alt="Hangman Picture" />
+                                <img class="img-thumbnail img-responsive image" id="image1" src="assets/images/Hangman_7.jpeg" alt="Hangman Picture" />
                                     
                             </div>
 
@@ -78,7 +86,7 @@
                                         <p class="smallboxtext">Number of Wins</p>
                                     </div>
                                     <div class="col-md-4 col-md-offset-4">
-                                        <p class="smallboxnumbers">0</p>
+                                        <p class="smallboxnumbers" id="livesNumber">0</p>
                                     </div>
                                 </div>
                             </div>
@@ -89,11 +97,21 @@
 
                     <div class="row letterrow">
 
-                        <div class="col-md-1 col-md-offset-4 letterbox" id="letter1">A</div>
-                        <div class="col-md-1 letterbox" id="letter2">B</div>
-                        <div class="col-md-1 letterbox" id="letter3">C</div>
-                        <div class="col-md-1 letterbox" id="letter4">D</div>
-                        <div class="col-md-1 letterbox" id="letter5">E</div>
+                        <div class="col-md-1 col-md-offset-4 letterbox" id="letter1">
+                                <p id="hidden">a</p> 
+                        </div>
+                        <div class="col-md-1 letterbox" id="letter2">
+                                <p id="hidden">b</p> 
+                        </div>
+                        <div class="col-md-1 letterbox" id="letter3">
+                                <p id="hidden">c</p> 
+                        </div>
+                        <div class="col-md-1 letterbox" id="letter4">
+                                <p id="hidden">d</p> 
+                        </div>
+                        <div class="col-md-1 letterbox" id="letter5">
+                                <p id="hidden">c</p> 
+                        </div>
 
                     </div>
                 <!-- Main Box -->

@@ -45,6 +45,10 @@
     padding-top: 5px;
     padding-bottom: 5px;
     color:#2D2A2A;
+
+}
+
+#inxsBox {
     background-color: salmon;
 }
 
@@ -100,6 +104,14 @@
     background-color: salmon;
     border: 2px solid #666;
 
+}
+
+#letter1 {
+    margin-left: 31%;
+}
+
+#hidden{
+    display: none;
 }
 
  /* Footer*/
