@@ -1,9 +1,6 @@
 /*
 alert("Connected");
-var letterguess = event.key
 */
-
-
 
 var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", "scuzz", "dizzy", "fizzy"];
 var pickedLettersArray = ["a", "b", "c", "d", "e"];
@@ -21,9 +18,7 @@ var livesNumberRender = document.querySelector("#livesNumber");
 
 // Start Function
 
-var startGame = function(event) {
-
-        guessNum = 7;
+function startGame(event) {
 
         var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
             console.log(chosenWordArray);
@@ -40,30 +35,37 @@ var startGame = function(event) {
         var letterFour = document.querySelector("#letter4").innerText = letterArray[3];
         console.log(letterFour);
         var letterFive = document.querySelector("#letter5").innerText = letterArray[4];
-        console.log(letterFive);
-
-       
+        console.log(letterFive);  
+        
         directions.innerText = "Choose a letter using the keyboard.";
         directionsBox.style.backgroundColor = "violet";
         hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
+             
 }
 
 document.addEventListener("keydown", startGame);
 
+
+
+var chosenLetter = function(event) {
+
+        var letter = event.key;
+        return letter;
+        }
+
+document.addEventListener("onkeydown", chosenLetter);
+console.log(chosenLetter);
+
 /*
-// Picking Letter
 
-var pickingLetter = function(event) {
-
-        var chosenLetter = event.key;
-
+function compareLetter() {
 
         for (var i = 0; i <= letterArray.length; i++) {
                 if (chosenLetter === letterArray[i]) {
 
                         pickedLettersArray[i] = chosenLetter;
                         
-                        displayLetter.style.display = "block";
+                        letterArray[i] = displayLetter.style.display = "block";
 
                         directions.innerText = "The letter '" + chosenLetter + "' matches! Choose another letter.";
                         
@@ -112,34 +114,28 @@ var pickingLetter = function(event) {
 document.addEventListener("keydown", pickingLetter);
 
 
-function winGame(event, cb) {
-        if (chosenWordArray === pickedLettersArray.join("")) {
+function compareWords(guessNum, event) {
+
+        if (guessNum = 0) {
+
+                        function restartGame(event, cb) {
+                        directions.innerText = "No more guesses. You lose! Hit 'Enter' if you would like to play again."
+                        directionsBox.style.backgroundColor = "red";
+                        }
+
+        } else if {
+                 (chosenWordArray === pickedLettersArray.join("")) {
                         gamesWon++;
                         livesNumberRender.innerText = gamesWon;
                         directions.innerText = "You win!! Hit 'Enter' if you would like to play again. "
                         directionsBox.style.backgroundColor = "yellow";
-                        document.addEventListener("keydown", startgame)
                         
 
         } else {
-                pickingLetter();
+                chosenLetter();
         }
 
 }
 
-function endGame(guessNum, event, cb) {
-        if (guessNum = 0) {
-
-                        directions.innerText = "No more guesses. You lose! Hit 'Enter' if you would like to play again."
-                        directionsBox.style.backgroundColor = "red";
-                        document.addEventListener("keydown", startgame");
-
-        } else {
-                       pickingLetter(); 
-        }
-                
-}
-
-document.addEventListener("keydown", startgame")
-
+document.addEventListener("onkeydown", startGame);
 */
