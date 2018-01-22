@@ -3,10 +3,9 @@ alert("Connected");
 */
 
 var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", "scuzz", "dizzy", "fizzy"];
-var pickedLettersArray = ["a", "b", "c", "d", "e"];
+var userLettersArray = ["a", "b", "c", "d", "e"];
 
 
-var letterArray;
 var guessNum;
 var gamesWon = 0;
 var directions = document.querySelector("#inxsText");
@@ -16,53 +15,66 @@ var guessNumberRender = document.querySelector("#guessNumber");
 var displayLetter = document.querySelector("#hidden");
 var livesNumberRender = document.querySelector("#livesNumber");
 
+
 // Start Function
 
-function startGame(event) {
+var startGame = function(event) {
 
         var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
-            console.log(chosenWordArray);
+            //console.log(chosenWordArray);
 
-        letterArray = chosenWordArray.split("");
-            console.log(letterArray, letterArray[0], letterArray[1], letterArray[2], letterArray[3], letterArray[4]);
+        var letterArray = chosenWordArray.split("");
+            //console.log(letterArray);// letterArray[0], letterArray[1], letterArray[2], letterArray[3], letterArray[4]);
 
         var letterOne = document.querySelector("#letter1").innerText = letterArray[0];
-        console.log(letterOne);
+        //console.log(letterOne);
         var letterTwo = document.querySelector("#letter2").innerText = letterArray[1];
-        console.log(letterTwo);
+        //console.log(letterTwo);
         var letterThree = document.querySelector("#letter3").innerText = letterArray[2];
-        console.log(letterThree);
+        //console.log(letterThree);
         var letterFour = document.querySelector("#letter4").innerText = letterArray[3];
-        console.log(letterFour);
+        //console.log(letterFour);
         var letterFive = document.querySelector("#letter5").innerText = letterArray[4];
-        console.log(letterFive);  
+        //console.log(letterFive);  
         
         directions.innerText = "Choose a letter using the keyboard.";
         directionsBox.style.backgroundColor = "violet";
-        hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
-             
+        hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg"; 
+
+
+
+
+
+                var chosenLetter = function(event) {
+
+                        var userLetter = event.key;
+                        
+                        console.log("letter", userLetter);
+                
+
+                        function compareLetter() {
+
+                                for (var i = 0; i <= letterArray.length; i++) {
+                                        if (userletter === letterArray[i]) {
+                                         alert(true);
+                                } else {
+                                        alert(false);
+                                 }  
+
+                                }
+                        }              
+
+
+                }
+
+                document.addEventListener("keyup", chosenLetter)
+
 }
 
-document.addEventListener("keydown", startGame);
+document.addEventListener("keyup", startGame); 
 
-
-
-var chosenLetter = function(event) {
-
-        var letter = event.key;
-        return letter;
-        }
-
-document.addEventListener("onkeydown", chosenLetter);
-console.log(chosenLetter);
 
 /*
-
-function compareLetter() {
-
-        for (var i = 0; i <= letterArray.length; i++) {
-                if (chosenLetter === letterArray[i]) {
-
                         pickedLettersArray[i] = chosenLetter;
                         
                         letterArray[i] = displayLetter.style.display = "block";
@@ -108,7 +120,7 @@ function compareLetter() {
                         }
                 }
                 
-        }
+        
 }
 
 document.addEventListener("keydown", pickingLetter);
