@@ -110,9 +110,16 @@
     margin-left: 31%;
 }
 
-#hidden{
-    display: none;
+#letterColor {
+    color: salmon;
+
 }
+
+.textColor {
+    color: salmon;
+}
+
+
 
  /* Footer*/
 
