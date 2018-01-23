@@ -110,8 +110,9 @@
     margin-left: 31%;
 }
 
-#hidden{
-    display: none;
+#letterColor {
+    color: black;
+
 }
 
  /* Footer*/

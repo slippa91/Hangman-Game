@@ -15,40 +15,7 @@ switch(guessNum) {
 */
 
 
-//Changing Hangman
 
-
-switch(guessNum) {
-
-    case 7:
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
-        break;
-        case 6:
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_1.jpeg";
-        break
-        case 5:
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_2.jpeg";
-        break;
-        case 4:
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_3.jpeg";
-        break;
-        case 3;
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_4.jpeg";
-        break;
-        case 2;
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_5.jpeg";
-        breakl
-        case 1:
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_6.jpeg";
-        break;
-        case 0:
-        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_7.jpeg";     
-        break;
-        default:
-        alert("Broken Picture");
-    }
-
-}
 
 changingHangman();
 
@@ -82,3 +49,88 @@ function changingHangman(guessNum) {
             alert("Broken Picture");
     }
 }
+
+
+//var letterColorChange = document.querySelector("#letterColor").classList.add("textColor");
+
+// for (var j = 0; j < letterArray.length; j++) {
+//         letterArray[j].document.querySelector("#letterColor").classList.add("textColor");
+// }
+
+
+
+
+
+/*
+                        pickedLettersArray[i] = chosenLetter;
+                        
+                        letterArray[i] = displayLetter.style.display = "block";
+
+                        directions.innerText = "The letter '" + chosenLetter + "' matches! Choose another letter.";
+                        
+
+                } else {
+                        directions.innerText = "The letter '" + chosenLetter + "' did not match. Pick another letter.";
+
+                        guessNum--;
+
+                        guessNumberRender.innerText = guessNum;
+
+                        switch(guessNum) {
+
+                                case 7:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
+                                        break;
+                                case 6:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_1.jpeg";
+                                        break
+                                case 5:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_2.jpeg";
+                                        break;
+                                case 4:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_3.jpeg";
+                                        break;
+                                case 3:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_4.jpeg";
+                                        break;
+                                case 2:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_5.jpeg";
+                                        break;
+                                case 1:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_6.jpeg";
+                                        break;
+                                case 0:
+                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_7.jpeg";     
+                                        break;
+                                default:
+                                alert("Broken Picture");
+                        }
+                }
+                
+        
+}
+
+document.addEventListener("keydown", pickingLetter);
+
+
+function compareWords(guessNum, event) {
+
+        if (guessNum = 0) {
+
+                        function restartGame(event, cb) {
+                        directions.innerText = "No more guesses. You lose! Hit 'Enter' if you would like to play again."
+                        directionsBox.style.backgroundColor = "red";
+                        }
+
+        } else if {
+                 (chosenWordArray === pickedLettersArray.join("")) {
+                        gamesWon++;
+                        livesNumberRender.innerText = gamesWon;
+                        directions.innerText = "You win!! Hit 'Enter' if you would like to play again. "
+                        directionsBox.style.backgroundColor = "yellow";
+                        
+
+        } else {
+                chosenLetter();
+        }
+*/
