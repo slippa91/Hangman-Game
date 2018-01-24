@@ -1,7 +1,7 @@
 /*
 alert("Connected");
 */
-
+var gamesWon = 0;
 var directions = document.querySelector("#inxsText");
 var directionsBox = document.querySelector("#inxsBox");
 var hangmanPicture = document.querySelector("#image1");
@@ -18,8 +18,6 @@ var startGame = function(event) {
         var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", "scuzz", "dizzy", "fizzy"];
         var guessedArray = ["a", "b", "c", "d", "e"];
         var guessNum = 7;
-        var gamesWon = 0;
-        
 
         var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
                 //console.log(chosenWordArray);
@@ -58,8 +56,10 @@ var startGame = function(event) {
 
                         var compareLetter = function() {
                                 for (var i = 0; i < letterArray.length; i++) {
-                                       if (userGuessLetter === letterArray[i]) {                                        guessedArray[i] = userGuessLetter;
+                                       if (userGuessLetter === letterArray[i]) {                                        
+                                        guessedArray[i] = userGuessLetter;
                                         console.log(guessedArray);
+                                        document.getElementById("#seeLetter").classList.remove("hide");
                                         directions.innerText = "The letter " + userGuessLetter + " matches! Keep guessing.";  
 
                                        } else {}
@@ -104,13 +104,14 @@ var startGame = function(event) {
                                                         directionsBox.style.backgroundColor = "red"; 
                                                         //    var restartHangman = function(event){
                                                         //            if (event.keyCode === 13){
-
+                                                        //                       startGame();
                                                         //            } else { 
                                                         //              break; 
                                                         //            }                       
                                                         //    }
-                                                        //     document.removeEventListener("click", chosenLetter);
-                                                        //     document.addEventListener("click", startGame);
+                                                        //     document.removeEventListener("keyup", chosenLetter);
+                                                        //     document.removeEventListener("keyup", startGame);
+                                                        //     document.addEventListener("keyup", restartHangman);
 
                                                         break;
                                                 default:
