@@ -75,7 +75,7 @@ var startGame = function(event) {
                                         console.log(guessedArray);
                                         //console.log("id", document.querySelector("#seeLetter"));
                                         document.querySelector("#letter" + (i + 1)).classList.remove("hide");
-                                        directions.innerText = "The letter  " + userGuessLetter + "  matches! Keep guessing.";  
+                                        directions.innerText = "The letter  '" + userGuessLetter + "'  matches! Keep guessing.";  
 
                                        } else {}
                                          
@@ -89,7 +89,7 @@ var startGame = function(event) {
                                         guessNum--;
                                           console.log(guessNum);
                                         guessNumberRender.innerText = guessNum;
-                                        directions.innerText = "The letter   " + userGuessLetter + "   did not match. Keep guessing.";
+                                        directions.innerText = "The letter   '" + userGuessLetter + "'   did not match. Keep guessing.";
                                         switch(guessNum) {
 
                                                 case 7:
