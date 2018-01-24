@@ -1,6 +1,5 @@
-/*
-alert("Connected");
-*/
+
+
 var gamesWon = 0;
 var directions = document.querySelector("#inxsText");
 var directionsBox = document.querySelector("#inxsBox");
@@ -9,7 +8,7 @@ var guessNumberRender = document.querySelector("#guessNumber");
 var displayLetter = document.querySelector("#hidden");
 var livesNumberRender = document.querySelector("#livesNumber");
 
-//console.log("The id is", document.querySelector("#seeLetter"));
+
 
 
 // Start Function
@@ -31,22 +30,17 @@ var startGame = function(event) {
 
 
         var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
-                //console.log(chosenWordArray);
+                
 
         var letterArray = chosenWordArray.split("");
-                //console.log(letterArray, letterArray[0]);
-
-        
-        document.querySelector("#letter1").innerText = letterArray[0];
-                //console.log(letterOne);
-        document.querySelector("#letter2").innerText = letterArray[1];
-                //console.log(letterTwo);
-        document.querySelector("#letter3").innerText = letterArray[2];
-                //console.log(letterThree);
-        document.querySelector("#letter4").innerText = letterArray[3];
-                //console.log(letterFour);
+                
+    
+        document.querySelector("#letter1").innerText = letterArray[0];               
+        document.querySelector("#letter2").innerText = letterArray[1];               
+        document.querySelector("#letter3").innerText = letterArray[2];             
+        document.querySelector("#letter4").innerText = letterArray[3];               
         document.querySelector("#letter5").innerText = letterArray[4];
-                //console.log(letterFive);   
+                  
 
         for (var j = 0; j < letterArray.length; j++) {
                 document.querySelector("#letter" + (j + 1)).classList.add("hide");  
@@ -64,30 +58,25 @@ var startGame = function(event) {
         var chosenLetter = function(event) {
 
                 var userGuessLetter = String(event.key);
-                        console.log("letter", userGuessLetter);
-                        console.log("letterArray", letterArray);            
-                        console.log(guessedArray);
+                        //console.log("letter", userGuessLetter);
+                        //console.log("letterArray", letterArray);            
+                        //console.log(guessedArray);
 
                         var compareLetter = function() {
                                 for (var i = 0; i < letterArray.length; i++) {
                                        if (userGuessLetter === letterArray[i]) {                                        
                                         guessedArray[i] = userGuessLetter;
-                                        console.log(guessedArray);
-                                        //console.log("id", document.querySelector("#seeLetter"));
                                         document.querySelector("#letter" + (i + 1)).classList.remove("hide");
                                         directions.innerText = "The letter  '" + userGuessLetter + "'  matches! Keep guessing.";  
 
-                                       } else {}
-                                         
-                                } //compareLetter "for" loop closing bracket
-
-                        } //compareLetter closing bracket             
+                                       } else {}                                         
+                                } 
+                        }           
                         compareLetter();
 
                         var checkLife = letterArray.indexOf(userGuessLetter);
                                 if(checkLife < 0) {
                                         guessNum--;
-                                          console.log(guessNum);
                                         guessNumberRender.innerText = guessNum;
                                         directions.innerText = "The letter   '" + userGuessLetter + "'   did not match. Keep guessing.";
                                         switch(guessNum) {
@@ -157,19 +146,15 @@ var startGame = function(event) {
                                 
                                                 } else {}
 
-                        }//compareArrays closing bracket
+                        }
                         compareArrays();
 
-
-
-
-        } //chosenLetter closing bracket
+        } 
         
         document.removeEventListener("keyup", startGame);
         document.addEventListener("keyup", chosenLetter);
         
 
-
-} //startGame Closing Bracket
+} 
 
 document.addEventListener("keyup", startGame); 
