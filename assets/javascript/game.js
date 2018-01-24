@@ -17,9 +17,18 @@ var livesNumberRender = document.querySelector("#livesNumber");
 var startGame = function(event) {
 
         //Starting Section
+
+
+        var guessNum = 7;
+
+        guessNumberRender.innerText = guessNum;
+        directions.innerText = "Press any key to begin playing.";
+        directionsBox.style.backgroundColor = "salmon";        
+        hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg"; 
+
         var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", "scuzz", "dizzy", "fizzy"];
         var guessedArray = ["a", "b", "c", "d", "e"];
-        var guessNum = 7;
+
 
         var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
                 //console.log(chosenWordArray);
@@ -38,13 +47,16 @@ var startGame = function(event) {
                 //console.log(letterFour);
         document.querySelector("#letter5").innerText = letterArray[4];
                 //console.log(letterFive);   
-        
 
+        for (var j = 0; j < letterArray.length; j++) {
+                document.querySelector("#letter" + (j + 1)).classList.add("hide");  
+        }
         
-
         directions.innerText = "Choose a letter using the keyboard.";
         directionsBox.style.backgroundColor = "violet";
         hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg"; 
+
+
 
 
         //User Guess
@@ -63,7 +75,7 @@ var startGame = function(event) {
                                         console.log(guessedArray);
                                         //console.log("id", document.querySelector("#seeLetter"));
                                         document.querySelector("#letter" + (i + 1)).classList.remove("hide");
-                                        directions.innerText = "The letter " + userGuessLetter + " matches! Keep guessing.";  
+                                        directions.innerText = "The letter  " + userGuessLetter + "  matches! Keep guessing.";  
 
                                        } else {}
                                          
@@ -77,7 +89,7 @@ var startGame = function(event) {
                                         guessNum--;
                                           console.log(guessNum);
                                         guessNumberRender.innerText = guessNum;
-                                        directions.innerText = "The letter " + userGuessLetter + " did not match. Keep guessing.";
+                                        directions.innerText = "The letter   " + userGuessLetter + "   did not match. Keep guessing.";
                                         switch(guessNum) {
 
                                                 case 7:
@@ -103,22 +115,22 @@ var startGame = function(event) {
                                                         break;
                                                 case 0:
                                                         document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_7.jpeg";
-                                                        directions.innerText = "You Lose!! Click Enter to play again";
+                                                        directions.innerText = "You Lose!! Click 'Enter' to play again";
                                                         directionsBox.style.backgroundColor = "red"; 
-                                                        //    var restartHangman = function(event){
-                                                        //            if (event.keyCode === 13){
-                                                        //                       startGame();
-                                                        //            } else { 
-                                                        //              alert("Please hit the Enter/Return key to play again."); 
-                                                        //            }                       
-                                                        //    }
-                                                        //     document.removeEventListener("keyup", chosenLetter);
-                                                        //     document.removeEventListener("keyup", startGame);
-                                                        //     document.addEventListener("keyup", restartHangman);
-
+                                                        var restartHangmanLoss = function(event){
+                                                                if (event.keyCode == 13) {
+                                                                          document.removeEventListener("keyup", restartHangmanLoss);
+                                                                          startGame();
+                                                                } else { 
+                                
+                                                                 alert("Please hit the 'Enter/Return' key to play again."); 
+                                                                }                       
+                                                       }
+                                                         document.removeEventListener("keyup", chosenLetter);
+                                                         document.addEventListener("keyup", restartHangmanLoss);
                                                         break;
                                                 default:
-                                                alert("Broken Picture");
+                                                alert("You have no lives remaining.");
                                                 } 
                                         
                                         } else {}
@@ -131,10 +143,23 @@ var startGame = function(event) {
                                                 livesNumberRender.innerText = gamesWon;
                                                 directions.innerText = "You win!! Hit 'Enter' if you would like to play again.";
                                                 directionsBox.style.backgroundColor = "yellow";
+                                                        var restartHangmanWin = function(event){
+                                                          if (event.keyCode == 13) {
+                                                                  document.removeEventListener("keyup", restartHangmanWin);
+                                                                  startGame();
+                                                          } else { 
+                        
+                                                           alert("Please hit the 'Enter/Return' key to play again."); 
+                                                          }                       
+                                                     }
+                                                 document.removeEventListener("keyup", chosenLetter);
+                                                 document.addEventListener("keyup", restartHangmanWin);
                                 
                                                 } else {}
+
                         }//compareArrays closing bracket
                         compareArrays();
+
 
 
 
