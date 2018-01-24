@@ -1,13 +1,15 @@
 /*
 alert("Connected");
 */
-
+var gamesWon = 0;
 var directions = document.querySelector("#inxsText");
 var directionsBox = document.querySelector("#inxsBox");
 var hangmanPicture = document.querySelector("#image1");
 var guessNumberRender = document.querySelector("#guessNumber");
 var displayLetter = document.querySelector("#hidden");
 var livesNumberRender = document.querySelector("#livesNumber");
+
+//console.log("The id is", document.querySelector("#seeLetter"));
 
 
 // Start Function
@@ -18,8 +20,6 @@ var startGame = function(event) {
         var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", "scuzz", "dizzy", "fizzy"];
         var guessedArray = ["a", "b", "c", "d", "e"];
         var guessNum = 7;
-        var gamesWon = 0;
-        
 
         var chosenWordArray = wordArray[(Math.floor((Math.random() *10) +1) - 1)];
                 //console.log(chosenWordArray);
@@ -58,8 +58,11 @@ var startGame = function(event) {
 
                         var compareLetter = function() {
                                 for (var i = 0; i < letterArray.length; i++) {
-                                       if (userGuessLetter === letterArray[i]) {                                        guessedArray[i] = userGuessLetter;
+                                       if (userGuessLetter === letterArray[i]) {                                        
+                                        guessedArray[i] = userGuessLetter;
                                         console.log(guessedArray);
+                                        //console.log("id", document.querySelector("#seeLetter"));
+                                        document.querySelector("#letter" + (i + 1)).classList.remove("hide");
                                         directions.innerText = "The letter " + userGuessLetter + " matches! Keep guessing.";  
 
                                        } else {}
@@ -104,13 +107,14 @@ var startGame = function(event) {
                                                         directionsBox.style.backgroundColor = "red"; 
                                                         //    var restartHangman = function(event){
                                                         //            if (event.keyCode === 13){
-
+                                                        //                       startGame();
                                                         //            } else { 
-                                                        //              break; 
+                                                        //              alert("Please hit the Enter/Return key to play again."); 
                                                         //            }                       
                                                         //    }
-                                                        //     document.removeEventListener("click", chosenLetter);
-                                                        //     document.addEventListener("click", startGame);
+                                                        //     document.removeEventListener("keyup", chosenLetter);
+                                                        //     document.removeEventListener("keyup", startGame);
+                                                        //     document.addEventListener("keyup", restartHangman);
 
                                                         break;
                                                 default:
