@@ -9,6 +9,8 @@ var guessNumberRender = document.querySelector("#guessNumber");
 var displayLetter = document.querySelector("#hidden");
 var livesNumberRender = document.querySelector("#livesNumber");
 
+//console.log("The id is", document.querySelector("#seeLetter"));
+
 
 // Start Function
 
@@ -59,7 +61,8 @@ var startGame = function(event) {
                                        if (userGuessLetter === letterArray[i]) {                                        
                                         guessedArray[i] = userGuessLetter;
                                         console.log(guessedArray);
-                                        document.getElementById("#seeLetter").classList.remove("hide");
+                                        //console.log("id", document.querySelector("#seeLetter"));
+                                        document.querySelector("#letter" + (i + 1)).classList.remove("hide");
                                         directions.innerText = "The letter " + userGuessLetter + " matches! Keep guessing.";  
 
                                        } else {}
@@ -106,7 +109,7 @@ var startGame = function(event) {
                                                         //            if (event.keyCode === 13){
                                                         //                       startGame();
                                                         //            } else { 
-                                                        //              break; 
+                                                        //              alert("Please hit the Enter/Return key to play again."); 
                                                         //            }                       
                                                         //    }
                                                         //     document.removeEventListener("keyup", chosenLetter);
