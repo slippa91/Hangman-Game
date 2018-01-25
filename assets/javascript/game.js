@@ -20,10 +20,8 @@ var startGame = function(event) {
 
         var guessNum = 7;
 
-        guessNumberRender.innerText = guessNum;
-        directions.innerText = "Press any key to begin playing.";
-        directionsBox.style.backgroundColor = "salmon";        
-        hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg"; 
+        guessNumberRender.innerText = guessNum;   
+        hangmanPicture.src = "assets/images/Hangman_0.jpeg"; 
 
         var wordArray = ["pizza", "whizz", "frizz", "fuzzy", "jazzy", "abuzz", "mezzo", "scuzz", "dizzy", "fizzy"];
         var guessedArray = ["a", "b", "c", "d", "e"];
@@ -48,7 +46,7 @@ var startGame = function(event) {
         
         directions.innerText = "Choose a letter using the keyboard.";
         directionsBox.style.backgroundColor = "violet";
-        hangmanPicture.src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg"; 
+
 
 
 
@@ -82,28 +80,28 @@ var startGame = function(event) {
                                         switch(guessNum) {
 
                                                 case 7:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_0.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_0.jpeg";
                                                         break;
                                                 case 6:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_1.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_1.jpeg";
                                                         break;
                                                 case 5:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_2.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_2.jpeg";
                                                         break;
                                                 case 4:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_3.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_3.jpeg";
                                                         break;
                                                 case 3:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_4.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_4.jpeg";
                                                         break;
                                                 case 2:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_5.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_5.jpeg";
                                                         break;
                                                 case 1:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_6.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_6.jpeg";
                                                         break;
                                                 case 0:
-                                                        document.querySelector("#image1").src = "file:///Users/sfl/Desktop/WorkingFolder/week02/02-Homework/Hangman-Game/assets/images/Hangman_7.jpeg";
+                                                        document.querySelector("#image1").src = "assets/images/Hangman_7.jpeg";
                                                         directions.innerText = "You Lose!! Click 'Enter' to play again";
                                                         directionsBox.style.backgroundColor = "red"; 
                                                         var restartHangmanLoss = function(event){
